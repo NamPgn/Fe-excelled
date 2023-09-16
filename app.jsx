@@ -25,13 +25,14 @@ const App = () => {
     formData.append('excelFile', data.excelFile[0]);
     const d = await upload(formData);
     const std = d.data.data;
+    std.shift();
     setStd(std);
     setDuplicatedNumbers(d.data.duplicatedNumbers);
   }
   const dataSource = std && std.map((item, index) => {
     return {
       key: index + 1,
-      value: '4 số đầu tiên:' + item.split(' ')[0]
+      value: '4 số đầu tiên:' + item.split(' ')[0],
     }
   })
   const dataSourceduplicatedNumbers = duplicatedNumbers && duplicatedNumbers.map((item, index) => {

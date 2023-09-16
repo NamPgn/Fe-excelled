@@ -31,7 +31,7 @@ const App = () => {
   const dataSource = std && std.map((item, index) => {
     return {
       key: index + 1,
-      value: '4 số đầu tiên:' + item
+      value: '4 số đầu tiên:' + item.split(' ')[0]
     }
   })
   const dataSourceduplicatedNumbers = duplicatedNumbers && duplicatedNumbers.map((item, index) => {
